@@ -16,7 +16,7 @@ class DistrictController extends Controller
     {
         $district = District::get()->all();
         $state = State::get()->all();
-        return view('district.district',['district'=>$district,'state'=>$state]);
+        return view('admin.district.district',['district'=>$district,'state'=>$state]);
     }
 
     public function insertDistrict(Request $request)
@@ -49,7 +49,7 @@ class DistrictController extends Controller
     {
         $district = District::get()->where('slug',$request->slug)->first();
         $state = State::get()->all();
-        return view('district.updateDistrict',['district'=>$district,'state'=>$state]);
+        return view('admin.district.updateDistrict',['district'=>$district,'state'=>$state]);
     }
 
     public function updateDistrict(Request $request)

@@ -13,7 +13,7 @@ class UserController extends Controller
     public function getUsers()
     {
         $user = User::get()->all();
-        return view('user.user', ['user' => $user]);
+        return view('admin.user.user', ['user' => $user]);
     }
     public function activeUser(Request $request)
     {

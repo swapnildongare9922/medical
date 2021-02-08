@@ -19,6 +19,7 @@ class CreateUserDetailsTable extends Migration
             $table->string('gst_no')->nullable();
             $table->integer('mobile_no')->nullable();
             $table->text('address')->nullable();
+            $table->foreignId('area')->references('id')->on('areas')->onDelete('cascade')->onUpdate('cascade');
             $table->string('profile_pic')->nullable();
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class StateController extends Controller
     {
         $state = State::get()->all();
         $country = Country::get()->all();
-        return view('state.state', ['state' => $state, 'country' => $country]);
+        return view('admin.state.state', ['state' => $state, 'country' => $country]);
     }
 
     public function insertState(Request $request)
@@ -45,7 +45,7 @@ class StateController extends Controller
     {
         $state = State::get()->where('slug',$request->slug)->first();
         $country = Country::get()->all();
-        return view('state.updateState',['state'=>$state,'country'=>$country]);
+        return view('admin.state.updateState',['state'=>$state,'country'=>$country]);
     }
 
     public function updateState(Request $request)

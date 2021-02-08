@@ -14,7 +14,7 @@ class CountryController extends Controller
     public function index()
     {
         $country = Country::get()->all();
-        return view('country.country')->with('country', $country);
+        return view('admin.country.country')->with('country', $country);
     }
     public function storeCountry(Request $request)
     {
@@ -39,7 +39,7 @@ class CountryController extends Controller
     public function getUpdateCountry(Request $request)
     {
         $country = Country::get()->where('slug', $request->slug)->first();
-        return view('country.updateCountry')->with('country', $country);
+        return view('admin.country.updateCountry')->with('country', $country);
     }
 
     public function updateCountry(Request $request)

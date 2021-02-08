@@ -15,7 +15,7 @@ class AreaController extends Controller
     {
         $area = Area::get()->all();
         $district =  District::get()->all();
-        return view('area.area', ['area' => $area, 'district' => $district]);
+        return view('admin.area.area', ['area' => $area, 'district' => $district]);
     }
     public function insertArea(Request $request)
     {
@@ -49,7 +49,7 @@ class AreaController extends Controller
         $district = District::get()->all();
         $area = Area::get()->where('slug', $request->slug)->first();
 
-        return view('area.updateArea', ['area' => $area, 'district' => $district]);
+        return view('admin.area.updateArea', ['area' => $area, 'district' => $district]);
     }
 
     public function updateArea(Request $request)
